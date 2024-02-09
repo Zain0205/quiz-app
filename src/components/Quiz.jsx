@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import QUESTION from "../question.js";
+import Timer from "./TImer.jsx";
 
 function Quiz() {
   const [userAsnwer, setUserAnswer] = useState([]);
   const questionIndex = userAsnwer.length;
 
-  const handleUserAnswer = (ans) => {
+  const handleUserAnswer = useCallback((ans) => {
     setUserAnswer((prev) => {
       return [...prev, ans];
     });
-  };
+  }, []);
+
+  const handleSkipAnswer = useCallback(() => handleUserAnswer(null), [handleUserAnswer]);
 
   if (userAsnwer.length === QUESTION.length) {
     return (
@@ -27,6 +30,7 @@ function Quiz() {
 
   return (
     <div className="bg-sky-900 text-white w-full rounded-md px-4 flex flex-col gap-y-5 items-center py-5">
+      <Timer key={questionIndex} timeout={10000} onTimeOut={() => handleSkipAnswer(null)} />
       <h1 className="text-2xl font-semibold">{QUESTION[questionIndex].question}</h1>
       <ul className="text-center flex flex-col gap-y-5 w-full">
         {unSortedAnswer.map((answer, i) => (
