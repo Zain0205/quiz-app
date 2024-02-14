@@ -7,8 +7,8 @@ function Timer({ timeout, onTimeOut }) {
     const timer = setTimeout(onTimeOut, timeout);
 
     return () => {
-      clearTimeout(timer)
-    }
+      clearTimeout(timer);
+    };
   }, [onTimeOut, timeout]);
 
   useEffect(() => {
@@ -17,13 +17,13 @@ function Timer({ timeout, onTimeOut }) {
     }, 100);
 
     return () => {
-      clearInterval(interval)
-    }
+      clearInterval(interval);
+    };
   }, []);
 
   return (
     <>
-      <progress className="w-1/2" value={remainingTime} max={timeout} />
+      <progress className="" value={remainingTime} max={timeout} />
     </>
   );
 }
