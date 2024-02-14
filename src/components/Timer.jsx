@@ -23,7 +23,7 @@ function Timer({ timeout, onTimeOut }) {
 
   return (
     <>
-      <progress value={remainingTime} max={timeout} />
+      <progress className="w-1/2" value={remainingTime} max={timeout} />
     </>
   );
 }
