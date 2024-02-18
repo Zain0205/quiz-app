@@ -42,11 +42,11 @@ export default [
   {
     id: "q9",
     question: "Pertanyaan 9",
-    answers: ["benar", "salah", "salah", "salah"],
+    answers: ["benar", "salahwwwwwwwwww", "saldasdasdlah", "saaaalah"],
   },
   {
     id: "q10",
     question: "Pertanyaan 10",
-    answers: ["benar", "salah", "salah", "salah"],
+    answers: ["benar", "salah898988", "salah9090909090", "12123434salah"],
   },
 ];
